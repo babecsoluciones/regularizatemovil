@@ -11,7 +11,7 @@
         <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
         <script type="text/javascript">
                 // We will fill in our code here
-                $.getJSON('json-index.json', function(data) {
+                $.getJSON('http://www.regularizate.org/negocios/api/json-index.json', function(data) {
                     
                     for(var i=0;i<data.length;i++)
                             {
@@ -22,9 +22,24 @@
                 });
                
         </script>
+    <script type="text/javascript">
+                // We will fill in our code here
+                $.getJSON('json-index.json', function(data) {
+                    
+                    for(var i=0;i<data.length;i++)
+                            {
+                                 document.getElementById('res2').innerHTML += '<p>' + data[i].valor + '</br>'
+                                        + data[i].imagen + '</p>';
+                            }
+                       
+                });
+               
+        </script>
 </head>
 <body>
-Page Content Here
+Remoto
     <div id="res"></div>
+Local
+    <div id="res2"></div>
 </body>
 </html>
