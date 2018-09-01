@@ -8,7 +8,7 @@ function pedirNegocio(codigo)
 {
     document.getElementById('codigo').value = localStorage.getItem("codigo",codigo);
     toJSONString('test','res');
-    /*localStorage.removeItem("codigo");*/
+    localStorage.removeItem("codigo");
 }
 
 function verVacante(codigo)
@@ -21,7 +21,7 @@ function pedirVacante(codigo)
 {
     document.getElementById('codigo').value = localStorage.getItem("codigoVacante",codigo);
     toJSONString('test','res');
-    /*localStorage.removeItem("codigoVacante");*/
+    localStorage.removeItem("codigoVacante");
 }
 
 function verPromocion(codigo)
@@ -34,5 +34,5 @@ function pedirPromocion(codigo)
 {
     document.getElementById('codigo').value = localStorage.getItem("codigoPromocion",codigo);
     toJSONString('test','res');
-    /*localStorage.removeItem("codigoPromocion");*/
+    localStorage.removeItem("codigoPromocion");
 }
