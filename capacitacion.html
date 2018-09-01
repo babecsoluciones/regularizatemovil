@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html >
 <head>
-  <!-- Site made with Mobirise Website Builder v4.7.9, https://mobirise.com -->
+  <!-- Site made with Mobirise Website Builder v4.7.9, # -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v4.7.9, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
   <meta name="description" content="">
-  <title>Home</title>
+  <title>Capacitacion</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/tether/tether.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -22,7 +22,7 @@
   
 </head>
 <body>
-  <section class="menu cid-qZFq2kupHR" once="menu" id="menu2-0">
+  <section class="menu cid-qZICi0xYTz" once="menu" id="menu2-c">
 
     
 
@@ -54,69 +54,38 @@
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobiri.se/b">create a website for free</a></section><section class="header9 cid-qZIwQl4D6K mbr-fullscreen mbr-parallax-background" id="header9-1">
+<section class="features3 cid-qZIELtS7K5" id="features3-r">
 
     
 
     
-
     <div class="container">
-        <div class="media-container-column mbr-white col-md-8">
-            <h1 class="mbr-section-title align-left mbr-bold pb-3 mbr-fonts-style display-1">
-                Regularízate Móvil</h1>
-            <h3 class="mbr-section-subtitle align-left mbr-light pb-3 mbr-fonts-style display-2">
-                La APP ¡ Gratuita!</h3>
-            <p class="mbr-text align-left pb-3 mbr-fonts-style display-5">
-                Porque estamos cansados de la corrupción, REGULARICEMOS NUESTRO PATRIMONIO!</p>
-            <div class="mbr-section-btn align-left"><a class="btn btn-md btn-black display-4" href="https://regularizate.org">Conoce más</a></div>
-        </div>
-    </div>
-
-    
-</section>
-
-<section class="clients cid-qZIA1LmjPH" id="clients-2">
-      
-
-    
-        <div class="container mb-5">
-            <div class="media-container-row">
-                <div class="col-12 align-center">
-                    <h2 class="mbr-section-title pb-3 mbr-fonts-style display-2">
-                        Nuestros Patrocinadores</h2>
-                    
-                </div>
-            </div>
-        </div>
-
-    <div class="container">
-        <div class="carousel slide" data-ride="carousel" role="listbox">
-            <div class="carousel-inner" id="myTable" data-visible="5">
-                
-                
-                
-            </div>
-            <div class="carousel-controls">
-                <a data-app-prevent-settings="" class="carousel-control carousel-control-prev" role="button" data-slide="prev">
-                    <span aria-hidden="true" class="mbri-left mbr-iconfont"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a data-app-prevent-settings="" class="carousel-control carousel-control-next" role="button" data-slide="next">
-                    <span aria-hidden="true" class="mbri-right mbr-iconfont"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
+        <div class="media-container-row" id="cursos">
+            
         </div>
     </div>
 </section>
 
     <div style="display:none;">
     <form id="test" name="test" method="post">
-<input type="hidden" id="tipo" name="tipo" readonly value="cons-pat"><br>
+<input type="hidden" id="tipo" name="tipo" readonly value="cons-cur"><br>
         </form>
     </div>
-    
-    <script src="js/aplicacion.js"></script>
+
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/script.min.js"></script>
+  <script src="assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
+  <script src="assets/ytplayer/jquery.mb.ytplayer.min.js"></script>
+  <script src="assets/vimeoplayer/jquery.mb.vimeo_player.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  <script src="assets/slidervideo/script.js"></script>
+  
+  <script src="js/aplicacion.js"></script>
   
   <script type="application/javascript">
 	
@@ -133,8 +102,14 @@
                     for(var i=0;i<data.length;i++)
                         {
                             var imagen = data[i].imagen,
+                                titulo = data[i].titulo,
                                 enlace = data[i].enlace;
-                            myFunction(imagen,enlace);
+                            
+                            var indice = i;
+                            
+                            var activo = (i==0) ? 'active' : '';
+                            
+                            myFunction(indice, imagen, titulo, enlace, activo);
                         }
 				},
 				failure: function(errMsg) {
@@ -161,36 +136,35 @@
             
 	}
         
-        function myFunction(imagen,enlace) 
-        {
+        function myFunction(indice, imagen, titulo, enlace, activo) {
+    var slider = document.getElementById("cursos");
+            
+    var contenido = '';
+            
+            contenido += '<div class="card p-3 col-12 col-md-6 col-lg-3">';
+            contenido += '    <div class="card-wrapper">';
+            contenido += '        <div class="card-img">';
+            contenido += '            <img src="'+imagen+'" alt="Regularizate">';
+            contenido += '        </div>';
+            contenido += '        <div class="card-box">';
+            contenido += '            '+titulo+'';
+            contenido += '            ';
+            contenido += '        </div>';
+            contenido += '        <div class="mbr-section-btn text-center">';
+            contenido += '            <a href="'+enlace+'" class="btn btn-primary display-4">';
+            contenido += '                Ver publicaci&oacute;n';
+            contenido += '            </a>';
+            contenido += '        </div>';
+            contenido += '    </div>';
+            contenido += '</div>';
+                    
     
-    document.getElementById("myTable").innerHTML += '<div class="carousel-item ">';
-     document.getElementById("myTable").innerHTML += '<div class="media-container-row">';
-      document.getElementById("myTable").innerHTML += '<div class="col-md-12">';
-      document.getElementById("myTable").innerHTML += '<div class="wrap-img ">';
-      document.getElementById("myTable").innerHTML += '<a href="'+enlace+'"><img src="'+imagen+'" class="img-responsive clients-img"></a>';
-      document.getElementById("myTable").innerHTML += '</div>';
-      document.getElementById("myTable").innerHTML += '</div>';
-      document.getElementById("myTable").innerHTML += '</div>';
-      document.getElementById("myTable").innerHTML += '</div>';
+    slider.innerHTML += contenido;
 }
       
       toJSONString('test','res');
 	
 	</script>
-
-  <script src="assets/web/assets/jquery/jquery.min.js"></script>
-  <script src="assets/popper/popper.min.js"></script>
-  <script src="assets/tether/tether.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/smoothscroll/smooth-scroll.js"></script>
-  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
-  <script src="assets/parallax/jarallax.min.js"></script>
-  <script src="assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
-  <script src="assets/mbr-clients-slider/mbr-clients-slider.js"></script>
-  <script src="assets/dropdown/js/script.min.js"></script>
-  <script src="assets/theme/js/script.js"></script>
-  
-  
+    
 </body>
 </html>
