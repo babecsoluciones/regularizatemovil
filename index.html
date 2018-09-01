@@ -9,8 +9,8 @@
                     
                     for(var i=0;i<data.length;i++)
                             {
-                                 $('body').html('<p>' + data[0].valor + '</br>'
-                                        + data[0].imagen + '</p>');
+                                 document.getElementById('res').innerHTML += '<p>' + data[i].valor + '</br>'
+                                        + data[i].imagen + '</p>';
                             }
                        
                 });
@@ -19,5 +19,6 @@
 </head>
 <body>
 Page Content Here
+    <div id="res"></div>
 </body>
 </html>
