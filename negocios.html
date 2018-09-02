@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="js/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
   
 </head>
 <body>
@@ -117,7 +117,7 @@
             var tipo = document.getElementById('tipo').value;
 			$.ajax({
 				type: "POST",
-				url: "http://regularizate.org/negocios/api/",
+				url: "https://regularizate.org/negocios/api/",
 				data: cadena,
 				contentType: "application/json; charset=utf-8",
 				dataType: "json",
@@ -152,10 +152,11 @@
                                     domicilio = data[i].domicilio,
                                     horario = data[i].horario,
                                     direccion = data[i].direccion,
+                                    descripcion = data[i].descripcion,
                                     fotos = data[i].fotos,
                                     web = data[i].web;
                                     
-                                myFunction(codigo,logotipo, nombre, categoria, domicilio, direccion, fotos, web, horario);
+                                myFunction(codigo,logotipo, nombre, categoria, domicilio, direccion, fotos, web, horario,descripcion);
                             }
                         }
                     
@@ -184,24 +185,28 @@
             
 	}
         
-        function myFunction(codigo,logotipo, nombre, categoria, domicilio, direccion, fotos, web, horario) {
+        function myFunction(codigo,logotipo, nombre, categoria, domicilio, direccion, fotos, web, horario,descripcion) {
     
             var destino = document.getElementById('myTable');
             
             var contenido = '';
             
-            contenido += '<div class="card p-3 col-12 col-md-6 col-lg-3" onclick="buscarNegocio(\''+codigo+'\')">';
+            contenido += '<div class="card p-3 col-12 col-md-6 col-lg-3">';
             contenido += '    <table>';
-            contenido += '        <tr>';
+            contenido += '        <tr  onclick="buscarNegocio(\''+codigo+'\')">';
             contenido += '          <td rowspan="3" align="center" valign="middle"><a href="#" onclick="buscarNegocio(\''+codigo+'\')">  <img src="'+logotipo+'" alt="Regularizate" width="75" height="75" ></a></td>';
             contenido += '        </td>';
             contenido += '        <td colspan="3">';
             contenido += '          '+nombre+'';
             contenido += '        </td>';
             contenido += '        </tr>';
-            contenido += '        <tr>';
-            contenido += '        <td colspan="3">';
+            contenido += '        <tr onclick="buscarNegocio(\''+codigo+'\')">';
+            contenido += '        <td colspan="2">';
             contenido += '        '+direccion+'</td>';
+            contenido += '        </tr>';
+            contenido += '        <tr  onclick="buscarNegocio(\''+codigo+'\')">';
+            contenido += '        <td colspan="2">';
+            contenido += '        '+descripcion+'</td>';
             contenido += '        </tr>';
             contenido += '        <tr>';
             contenido += '          <td>';
@@ -232,7 +237,7 @@
             contenido += '          <a href="#" onclick="seccion(\''+valor+'\',\'cons-neg\')">  <img src="'+imagen+'" alt="Regularizate" ></a>';
             contenido += '        </div>';
             contenido += '        <div class="card-box">';
-            contenido += '            ';
+            contenido += '            '+valor+'';
             contenido += '            ';
             contenido += '        </div>';
             contenido += '        <div class="mbr-section-btn text-center">';
