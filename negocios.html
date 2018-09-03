@@ -61,7 +61,7 @@
         <h2 class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">
           Negocios</h2>
         <div class="media-container-row" id="cursos">
-            
+            <center><img src="ldrs/loader.gif"></center>
         </div>
     </div>
 </section>
@@ -84,7 +84,7 @@
         </div>
 
         <div class="container scroll" id="myTable">
-          
+          <center><img src="ldrs/loader.gif"></center>
         </div>
         
       </div>
@@ -126,7 +126,7 @@
                     if(tipo=='cata-neg')
                         {
                             
-                            
+                            document.getElementById('cursos').innerHTML = "";
                             for(var i=0;i<data.length;i++)
                             {
                                 var valor = data[i].valor,
@@ -201,11 +201,11 @@
             contenido += '        </td>';
             contenido += '        </tr>';
             contenido += '        <tr onclick="buscarNegocio(\''+codigo+'\')">';
-            contenido += '        <td colspan="2">';
+            contenido += '        <td colspan="3">';
             contenido += '        '+direccion+'</td>';
             contenido += '        </tr>';
             contenido += '        <tr  onclick="buscarNegocio(\''+codigo+'\')">';
-            contenido += '        <td colspan="2">';
+            contenido += '        <td colspan="3">';
             contenido += '        '+descripcion+'</td>';
             contenido += '        </tr>';
             contenido += '        <tr>';
@@ -237,7 +237,7 @@
             contenido += '          <a href="#" onclick="seccion(\''+valor+'\',\'cons-neg\')">  <img src="'+imagen+'" alt="Regularizate" ></a>';
             contenido += '        </div>';
             contenido += '        <div class="card-box">';
-            contenido += '            '+valor+'';
+            contenido += '            <center><b>'+valor+'</b></center>';
             contenido += '            ';
             contenido += '        </div>';
             contenido += '        <div class="mbr-section-btn text-center">';
