@@ -98,8 +98,14 @@
 				contentType: "application/json; charset=utf-8",
 				dataType: "json",
 				success: function(data){
-						
-                    for(var i=0;i<data.length;i++)
+                    
+                    if(data.length==0)
+                        {
+                            document.getElementById("cursos").innerHTML = '<b>Sin cursos por el momento</b>';
+                        }
+                    else
+                        {
+                            for(var i=0;i<data.length;i++)
                         {
                             var imagen = data[i].imagen,
                                 titulo = data[i].titulo,
@@ -111,6 +117,9 @@
                             
                             myFunction(indice, imagen, titulo, enlace, activo);
                         }
+                        }
+						
+                    
 				},
 				failure: function(errMsg) {
 					alert('Error al obtener los datos.\nComprueba tu enlace a internet');
