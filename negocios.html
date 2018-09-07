@@ -117,7 +117,7 @@
             var tipo = document.getElementById('tipo').value;
 			$.ajax({
 				type: "POST",
-				url: "https://regularizate.org/negocios/api/",
+				url: "https://regularizate.org/api/",
 				data: cadena,
 				contentType: "application/json; charset=utf-8",
 				dataType: "json",
@@ -231,13 +231,13 @@
             
     var contenido = '';
             
-            contenido += '<div class="card p-3 col-12 col-md-6 col-lg-3">';
+            /*contenido += '<div class="card p-3 col-12 col-md-6 col-lg-3">';
             contenido += '    <div class="card-wrapper">';
             contenido += '        <div class="card-img">';
             contenido += '          <a href="#" onclick="seccion(\''+valor+'\',\'cons-neg\')">  <img src="'+imagen+'" alt="Regularizate" ></a>';
             contenido += '        </div>';
             contenido += '        <div class="card-box">';
-            contenido += '            <center><b>'+valor+'</b></center>';
+            contenido += '            <center><i class="far fa-lemon"></i>'+valor+'<i class="fas fa-arrow-right"></i></center>';
             contenido += '            ';
             contenido += '        </div>';
             contenido += '        <div class="mbr-section-btn text-center">';
@@ -246,6 +246,14 @@
             contenido += '              ';
             contenido += '        </div>';
             contenido += '    </div>';
+            contenido += '</div>';*/
+            
+            contenido += '<div card p-3 class="col-12 col-md-6 col-lg-3">';
+            contenido += '    <table width="100%" onclick="seccion(\''+valor+'\',\'cons-neg\')">';
+            contenido += '          <tr>';
+            contenido += '            <td width="20"><i class="'+imagen+'"></i></td><td align="left">'+valor+'</td><td align="right"><i class="fas fa-arrow-right"></i></td>';
+            contenido += '            </tr>';
+            contenido += '        </table>';
             contenido += '</div>';
                     
     
