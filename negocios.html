@@ -21,8 +21,6 @@
   
   <script src="js/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
   
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    
 </head>
 <body>
   <section class="menu cid-qZIB8rJGNL" once="menu" id="menu2-3">
@@ -203,11 +201,11 @@
             contenido += '        </td>';
             contenido += '        </tr>';
             contenido += '        <tr onclick="buscarNegocio(\''+codigo+'\')">';
-            contenido += '        <td colspan="3">';
+            contenido += '        <td colspan="2">';
             contenido += '        '+direccion+'</td>';
             contenido += '        </tr>';
             contenido += '        <tr  onclick="buscarNegocio(\''+codigo+'\')">';
-            contenido += '        <td colspan="3">';
+            contenido += '        <td colspan="2">';
             contenido += '        '+descripcion+'</td>';
             contenido += '        </tr>';
             contenido += '        <tr>';
@@ -233,13 +231,13 @@
             
     var contenido = '';
             
-            /*contenido += '<div class="card p-3 col-12 col-md-6 col-lg-3">';
+            contenido += '<div class="card p-3 col-12 col-md-6 col-lg-3">';
             contenido += '    <div class="card-wrapper">';
             contenido += '        <div class="card-img">';
             contenido += '          <a href="#" onclick="seccion(\''+valor+'\',\'cons-neg\')">  <img src="'+imagen+'" alt="Regularizate" ></a>';
             contenido += '        </div>';
             contenido += '        <div class="card-box">';
-            contenido += '            <center><i class="far fa-lemon"></i>'+valor+'<i class="fas fa-arrow-right"></i></center>';
+            contenido += '            '+valor+'';
             contenido += '            ';
             contenido += '        </div>';
             contenido += '        <div class="mbr-section-btn text-center">';
@@ -248,14 +246,6 @@
             contenido += '              ';
             contenido += '        </div>';
             contenido += '    </div>';
-            contenido += '</div>';*/
-            
-            contenido += '<div card p-3 class="col-12 col-md-6 col-lg-3">';
-            contenido += '    <table width="100%" onclick="seccion(\''+valor+'\',\'cons-neg\')">';
-            contenido += '          <tr>';
-            contenido += '            <td width="20"><i class="'+imagen+'"></i></td><td align="left">'+valor+'</td><td align="right"><i class="fas fa-arrow-right"></i></td>';
-            contenido += '            </tr>';
-            contenido += '        </table>';
             contenido += '</div>';
                     
     
