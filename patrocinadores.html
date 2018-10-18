@@ -1,0 +1,172 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Regularizate Movil</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" href="assets/scss/style.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+
+  <script src="js/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+        <!-- Left Panel -->
+
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <!--<a class="navbar-brand" href="./"><img src="images/icn-app.png" alt="Logo" width="17" height="17"></a>
+                <a class="navbar-brand hidden" href="./"><img src="images/icn-app.png" alt="Logo" width="17" height="17"></a>-->
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse navbar-fixed-top">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Inicio </a>
+                    </li>
+                    
+                    <li>
+                        <a href="negocios.html"> <i class="menu-icon ti-briefcase"></i>Negocios </a>
+                    </li>
+                    <li>
+                        <a href="promociones.html"> <i class="menu-icon ti-money"></i>Promociones </a>
+                    </li>
+                    <li>
+                        <a href="empleo.html"> <i class="menu-icon ti-notepad"></i>Bolsa de Trabajo </a>
+                    </li>
+                    <li>
+                        <a href="cursos.html"> <i class="menu-icon ti-tablet"></i>Capacitaci&oacute;n </a>
+                    </li>
+                    <li>
+                        <a href="patrocinadores.html"> <i class="menu-icon fa fa-dashboard"></i>Patrocinadores </a>
+                    </li>
+                    
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+       
+        <!-- Header-->
+<center><img style="width:85px; height:85px; margin-top:15px;" alt="" src="images/icn-app.png"></center>
+        
+
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row" id="patrocinadores">
+
+            
+
+                </div><!-- .row -->
+            </div><!-- .animated -->
+        </div><!-- .content -->
+
+
+    </div><!-- /#right-panel -->
+
+    <!-- Right Panel -->
+ <div style="display:none;">
+    <form id="test" name="test" method="post">
+<input type="hidden" id="tipo" name="tipo" readonly value="cons-pat"><br>
+        </form>
+    </div>
+
+    <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="js/aplicacion.js"></script>
+
+<script type="application/javascript">
+	
+		function enviar(cadena)
+		{
+			$.ajax({
+				type: "POST",
+				url: "https://capacitacion.regularizate.org/api/",
+				data: cadena,
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				success: function(data){
+						
+                    for(var i=0;i<data.length;i++)
+                        {
+                            var imagen = data[i].imagen,
+                                enlace = data[i].enlace;
+                            myFunction(imagen,enlace);
+                        }
+				},
+				failure: function(errMsg) {
+					alert('Error al obtener los datos.\nComprueba tu enlace a internet');
+				}
+			});
+		}
+		
+		function toJSONString( form ,res) {
+  		var form1 = document.getElementById(form);
+		var obj = {};
+		var elements = form1.querySelectorAll( "input, select, textarea" );
+		for( var i = 0; i < elements.length; ++i ) {
+			var element = elements[i];
+			var name = element.name;
+			var value = element.value;
+
+			if( name ) {
+				obj[ name ] = value;
+			}
+		}
+			
+			enviar(JSON.stringify( obj ));
+            
+	}
+        
+        function myFunction(imagen,enlace) 
+        {
+            var destino = document.getElementById("patrocinadores");
+            
+            var contenido = '';
+            contenido += '<div class="col-xl-3 col-lg-6">';
+            contenido += '    <a href="'+enlace+'"><div class="card">';
+            contenido += '        <div class="card-body">';
+            contenido += '            <div class="stat-widget-one">';
+            contenido += '                <div class="stat-icon dib"><img src="'+imagen+'" alt="Regularizate" ></div>';
+            contenido += '            </div>';
+            contenido += '        </div>';
+            contenido += '    </div></a>';
+            contenido += '</div>';
+    
+        destino.innerHTML += contenido;
+}
+      
+      toJSONString('test','res');
+	
+	</script>
+</body>
+</html>

@@ -36,3 +36,8 @@ function pedirPromocion(codigo)
     toJSONString('test','res');
     localStorage.removeItem("codigoPromocion");
 }
+
+function fnRedirigir(enlace)
+{
+    window.location = enlace;
+}
