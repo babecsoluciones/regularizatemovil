@@ -41,3 +41,55 @@ function fnRedirigir(enlace)
 {
     window.location = enlace;
 }
+
+//validamos usuario
+var usuario = localStorage.getItem("codigoUsuario",codigo);
+
+function validarUsuario()
+{
+    var btnUsuario = document.getElementById('btnUsuario'),
+        lnkUsuario = document.getElementById('lnkUsuario'),
+        logout = document.getElementById('logout'),
+        signup = document.getElementById('signup');
+    if(usuario)
+    {
+        if(btnUsuario)
+            {
+                btnUsuario.innerHTML = '<div class="icon"><i class="fa fa-sign-in pomeg"></i></div>Mi Portal';
+                btnUsuario.href="miportal.html";
+                signup.style.display = 'none';
+            }
+        if(lnkUsuario)
+            {
+                lnkUsuario.innerHTML = '<i class="fa fa-sign-in belize"></i>Mi Portal</a>';
+                lnkUsuario.href="miportal.html";
+                logout.style.display = 'inline';
+            }
+    } 
+    else
+        {
+           if(btnUsuario)
+            {
+                btnUsuario.innerHTML = '<div class="icon"><i class="fa fa-sign-in pomeg"></i></div>Iniciar Sesi&oacute;n';
+                btnUsuario.href="sign-in.html";
+            }
+        if(lnkUsuario)
+            {
+                lnkUsuario.innerHTML = '<i class="fa fa-sign-in belize"></i>Iniciar Sesi&oacute;n</a>';
+                lnkUsuario.href="sign-in.html";
+                logout.style.display = 'none';
+            } 
+        }
+}
+
+function datosUsuario()
+{
+    document.getElementById('codigoUsuario').value = usuario;
+    toJSONString('test','res');
+}
+
+function cerrarSesion()
+{
+    localStorage.removeItem("codigoUsuario");
+    window.location="index.html";
+}
