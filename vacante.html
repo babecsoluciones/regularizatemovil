@@ -87,7 +87,7 @@
 			</div>
 			 <form id="test" name="test" method="post" enctype="multipart/form-data">
 				<input type="text" placeholder="Nombre completo">
-				<input type="email" placeholder="E-mail">
+				<!--<input type="email" placeholder="E-mail">-->
                 C.V. <input type="file" id="archivo" name="archivo" onchange="readURL(this);">
                 <input type="hidden" id="cv" name="cv">
                 <input type="hidden" id="tipo" name="tipo" readonly value="deta-vac">
@@ -111,7 +111,7 @@
 		{
 			$.ajax({
 				type: "POST",
-				url: "http://regularizate.org/api/",
+				url: "https://regularizate.org/api/",
                 crossDomain: true,
                 cors: true,
 				data: cadena,

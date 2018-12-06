@@ -96,6 +96,7 @@
 				contentType: "application/json; charset=utf-8",
 				dataType: "json",
 				success: function(data){
+                    alert(data);
                     if(data.mensaje=="OK")
                     {localStorage.setItem("codigoUsuario",data.codigo); validarUsuario();}
                     else

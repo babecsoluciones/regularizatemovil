@@ -47,7 +47,7 @@ function fnRedirigir(enlace)
 
 function validarUsuario()
 {
-    var usuario = localStorage.getItem("codigoUsuario",codigo);
+    var usuario = localStorage.getItem("codigoUsuario") ? localStorage.getItem("codigoUsuario",codigo) : false;
     
     var btnUsuario = document.getElementById('btnUsuario'),
         lnkUsuario = document.getElementById('lnkUsuario'),
