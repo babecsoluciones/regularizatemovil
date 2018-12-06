@@ -76,6 +76,7 @@
 					<p id="telefono"></p>
 					<p id="horario"></p>
                     <p id="domicilio"></p>
+                    <p id="web"></p>
 				</div>
 			</div>
 		</div>
@@ -111,6 +112,7 @@
     
 	<script src="js/jquery.min.js"></script>
 	<script src="js/materialize.js"></script>
+    <script src="js/lightbox.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/main.js"></script>
     <script src="js/aplicacion.js"></script>
@@ -121,7 +123,7 @@
 		{
 			$.ajax({
 				type: "POST",
-				url: "https://regularizate.org/negocios/api/",
+				url: "https://regularizate.org/api/",
 				data: cadena,
 				contentType: "application/json; charset=utf-8",
 				dataType: "json",
@@ -135,6 +137,8 @@
                     document.getElementById('direccion').innerHTML = 'Direcci&oacute;n: '+data.direccion;
                     
                     document.getElementById('horario').innerHTML = 'Horario: '+data.horario;
+                    
+                    document.getElementById('web').innerHTML = 'Sitio web: '+data.web;
                     
                     document.getElementById('imagen').src = data.imagen;
                     

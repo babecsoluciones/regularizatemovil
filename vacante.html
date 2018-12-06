@@ -79,14 +79,25 @@
 				</div>
 			</div>
 		</div>
+        
+        <div class="signin-contents">
+			<div class="pages-title">
+				<h3>Postularme</h3>
+				<div class="line"></div>
+			</div>
+			 <form id="test" name="test" method="post">
+				<input type="text" placeholder="Nombre completo">
+				<input type="email" placeholder="E-mail">
+                C.V. <input type="file" id="archivo" name="archivo" onchange="readURL(this);">
+                <input type="hidden" id="cv" name="cv">
+                <input type="hidden" id="tipo" name="tipo" readonly value="deta-vac">
+<input type="hidden" id="codigo" name="codigo" readonly>
+				<button class="button" onclick="postularme()"><i class="fa fa-send"></i>Postularme</button>
+			</form>
+			
+		</div>
 	</div>
 	<!-- end about -->
- <div style="display:none;">
-    <form id="test" name="test" method="post">
-<input type="hidden" id="tipo" name="tipo" readonly value="deta-vac">
-<input type="hidden" id="codigo" name="codigo" readonly>
-        </form>
-    </div>
     
 	<script src="js/jquery.min.js"></script>
 	<script src="js/materialize.js"></script>
@@ -100,16 +111,32 @@
 		{
 			$.ajax({
 				type: "POST",
-				url: "https://capacitacion.regularizate.org/api/",
+				url: "https://regularizate.org/api/",
 				data: cadena,
 				contentType: "application/json; charset=utf-8",
 				dataType: "json",
 				success: function(data){
-					document.getElementById('busqueda').innerHTML = data.titulo;
+                    if(document.getElementById('tipo').value=="post-vac")
+                        {
+                            if(data.correcto=="YES")
+                                {
+                                    alert("Tu postulacion se ha enviado satisfactoriamente");
+                                }
+                            else
+                                {
+                                    alert("Hubo un error al enviar tu postulacion, trabajaremos para resolver este conflicto");
+                                }
+                        }
+                    else
+                        {
+                            
+                    document.getElementById('busqueda').innerHTML = data.titulo;
                     
                     document.getElementById('vacante').innerHTML = data.vacante;
                     
-                    document.getElementById('contacto').innerHTML = 'Para mayor información contactar a<br>Nombre:'+data.nombre+'<br>Puesto:'+data.puesto+'<br>E-mail:'+data.email+'<br>Teléfono:'+data.telefono;
+                    document.getElementById('contacto').innerHTML = 'Para mayor información contactar a<br>Nombre:'+data.nombre+'<br>Puesto:'+data.puesto+'<br>E-mail:'+data.email+'<br>Teléfono:'+data.telefono;        
+                        
+                        }
 				},
 				failure: function(errMsg) {
 					alert('Error al obtener los datos.\nComprueba tu enlace a internet');
@@ -134,10 +161,27 @@
 			enviar(JSON.stringify( obj ));
             
 	}
+         
+         function postularme()
+         {
+             document.getElementById('tipo').value = "post-vac";
+             toJSONString('test','a');
+         }
+         
+         function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				reader.onload = function (e) {
+					$('#falseinput').attr('src', e.target.result);
+					$('#cv').val(e.target.result);
+				};
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
       
       pedirVacante();
 	validarUsuario();
 	</script>
-
+   
 </body>
 </html>

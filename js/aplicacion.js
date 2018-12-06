@@ -43,10 +43,12 @@ function fnRedirigir(enlace)
 }
 
 //validamos usuario
-var usuario = localStorage.getItem("codigoUsuario",codigo);
+
 
 function validarUsuario()
 {
+    var usuario = localStorage.getItem("codigoUsuario",codigo);
+    
     var btnUsuario = document.getElementById('btnUsuario'),
         lnkUsuario = document.getElementById('lnkUsuario'),
         logout = document.getElementById('logout'),

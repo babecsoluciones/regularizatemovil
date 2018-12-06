@@ -63,15 +63,15 @@
 		<div class="container">
 		<div class="signup-contents">
 			<div class="pages-title">
-				<h3>Sign Up</h3>
+				<h3>Reg&iacute;strate</h3>
 				<div class="line"></div>
 			</div>
 			<form id="test" name="datos" method="post">
-				<input type="text" placeholder="Nombre Completo">
-				<input type="email" placeholder="Email">
-				<input type="password" placeholder="password">
-				<input type="password" placeholder="Verificar Password">
-				<button class="button"><i class="fa fa-send"></i>Registrarme</button>
+				<input type="text" name="nombre" id="nombre" placeholder="Nombre Completo">
+				<input type="email" name="email" id="email" placeholder="Email">
+				<input type="password" name="password" id="password" placeholder="Password">
+                <input type="hidden" id="tipo" name="tipo" readonly value="user-reg">
+				<button class="button" onclick="toJSONString('test')"><i class="fa fa-send"></i>Registrarme</button>
 			</form>
 			
 		</div>
@@ -83,6 +83,50 @@
 	<script src="js/materialize.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/main.js"></script>
+     <script src="js/aplicacion.js"></script>
+    <script type="application/javascript">
+	
+		function enviar(cadena)
+		{
+			$.ajax({
+				type: "POST",
+				url: "https://regularizate.org/api/",
+				data: cadena,
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				success: function(data){
+                    if(data.codigo)
+                        {alert("Registro completado");}
+                    else
+                        {alert("Error al procesar la solicitud");}
+					
+				},
+				failure: function(errMsg) {
+					alert('Error al obtener los datos.\nComprueba tu enlace a internet');
+				}
+			});
+		}
+		
+		function toJSONString( form ) {
+  		var form1 = document.getElementById(form);
+		var obj = {};
+		var elements = form1.querySelectorAll( "input, select, textarea" );
+		for( var i = 0; i < elements.length; ++i ) {
+			var element = elements[i];
+			var name = element.name;
+			var value = element.value;
 
+			if( name ) {
+				obj[ name ] = value;
+			}
+		}
+			
+			enviar(JSON.stringify( obj ));
+            
+	}
+      
+     
+	validarUsuario();
+	</script>
 </body>
 </html>
