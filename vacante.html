@@ -85,7 +85,7 @@
 				<h3>Postularme</h3>
 				<div class="line"></div>
 			</div>
-			 <form id="test" name="test" method="post">
+			 <form id="test" name="test" method="post" enctype="multipart/form-data">
 				<input type="text" placeholder="Nombre completo">
 				<input type="email" placeholder="E-mail">
                 C.V. <input type="file" id="archivo" name="archivo" onchange="readURL(this);">
@@ -111,21 +111,16 @@
 		{
 			$.ajax({
 				type: "POST",
-				url: "https://regularizate.org/api/",
+				url: "http://regularizate.org/api/",
+                crossDomain: true,
+                cors: true,
 				data: cadena,
 				contentType: "application/json; charset=utf-8",
 				dataType: "json",
 				success: function(data){
                     if(document.getElementById('tipo').value=="post-vac")
                         {
-                            if(data.correcto=="YES")
-                                {
-                                    alert("Tu postulacion se ha enviado satisfactoriamente");
-                                }
-                            else
-                                {
-                                    alert("Hubo un error al enviar tu postulacion, trabajaremos para resolver este conflicto");
-                                }
+                            alert(data.correcto);
                         }
                     else
                         {
