@@ -89,7 +89,7 @@
 		{
 			$.ajax({
 				type: "POST",
-				url: "https://www.regularizate.org/api/",
+				url: localStorage.getItem("urlServicio"),
                 crossDomain: true,
                 cors: true,
 				data: cadena,

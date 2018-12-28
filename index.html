@@ -143,6 +143,12 @@
 			</div>
 		</div>
 	</div>
+    
+     <div style="display:none;">
+    <form id="test" name="test" method="post">
+<input type="hidden" id="tipo" name="tipo" readonly value="req-url"><br>
+        </form>
+    </div>
 	<!-- end persipura -->
 
 	<!-- vs -->
@@ -156,9 +162,52 @@
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/main.js"></script>
     <script src="js/aplicacion.js"></script>
-    <script>
-    validarUsuario();
-    </script>
+
+    
+    <script type="application/javascript">
+	
+		function enviar(cadena){
+            var tipo = document.getElementById('tipo').value;
+			$.ajax({
+				type: "POST",
+				url: "https://regularizate.org/api/",
+				data: cadena,
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				success: function(data){
+					localStorage.removeItem("urlServicio");
+                    localStorage.setItem("urlServicio",data.enlace);
+				},
+				failure: function(errMsg) {
+					alert('Error al obtener los datos.\nComprueba tu enlace a internet');
+				}
+			});
+		}
+		
+		function toJSONString( form ,res) {
+  		var form1 = document.getElementById(form);
+		var obj = {};
+		var elements = form1.querySelectorAll( "input, select, textarea" );
+		for( var i = 0; i < elements.length; ++i ) {
+			var element = elements[i];
+			var name = element.name;
+			var value = element.value;
+
+			if( name ) {
+				obj[ name ] = value;
+			}
+		}
+			
+			enviar(JSON.stringify( obj ));
+            
+	}
+        
+
+        
+        toJSONString('test','res');
+        validarUsuario();
+	
+	</script>
 
 </body>
 </html>

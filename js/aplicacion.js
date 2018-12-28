@@ -1,3 +1,4 @@
+
 function buscarNegocio(codigo)
 {
     localStorage.setItem("codigo",codigo);

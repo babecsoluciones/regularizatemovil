@@ -98,7 +98,7 @@
 		{
 			$.ajax({
 				type: "POST",
-				url: "https://regularizate.org/api/",
+				url: localStorage.getItem("urlServicio"),
 				data: cadena,
 				contentType: "application/json; charset=utf-8",
 				dataType: "json",
