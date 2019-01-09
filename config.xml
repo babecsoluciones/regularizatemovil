@@ -69,7 +69,7 @@
   <!--<gap:plugin name="org.apache.cordova.inappbrowser" />-->
   
   <!-- Define app icon for each platform. -->
-  <icon src="icons/icn-app.png" width="512" height="512" />
+  <icon src="icons/1024.png" width="1024" height="1024" />
   <icon src="icons/icn-app.png"           gap:platform="android"    gap:density="ldpi" />
   <icon src="icons/icn-app.png"           gap:platform="android"    gap:density="mdpi" />
   <icon src="icons/icn-app.png"           gap:platform="android"    gap:density="hdpi" />
@@ -81,6 +81,7 @@
   <icon src="icons/icn-app.png"           gap:platform="ios" width="76" height="76"/>
   <icon src="icons/icn-app.png"           gap:platform="ios" width="120" height="120"/>
   <icon src="icons/icn-app.png"           gap:platform="ios" width="152" height="152"/>
+    <icon src="icons/1024.png"           gap:platform="ios" width="1024" height="1024"/>
   
   <!-- Define app splash screen for each platform.     -->
   <platform name="ios">
