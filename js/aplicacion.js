@@ -68,13 +68,13 @@ function validarUsuario()
         if(btnUsuario)
             {
                 btnUsuario.innerHTML = '<div class="icon"><i class="fa fa-sign-in pomeg"></i></div>Mi Portal';
-                btnUsuario.href="miportal.html";
+                btnUsuario.href="miperfil.html";
                 signup.style.display = 'none';
             }
         if(lnkUsuario)
             {
                 lnkUsuario.innerHTML = '<i class="fa fa-sign-in belize"></i>Mi Portal</a>';
-                lnkUsuario.href="miportal.html";
+                lnkUsuario.href="miperfil.html";
                 logout.style.display = 'inline';
             }
     } 
@@ -94,8 +94,22 @@ function validarUsuario()
         }
 }
 
+function verServicio(codigo)
+{
+    localStorage.setItem("codigoServicio",codigo);
+    window.location = "misservicios.html";
+}
+
+function pedirServicio(codigo)
+{
+    document.getElementById('codigo').value = localStorage.getItem("codigoServicio",codigo);
+    toJSONString('test','res');
+    localStorage.removeItem("codigoPromocion");
+}
+
 function datosUsuario()
 {
+    var usuario = localStorage.getItem("codigoUsuario",codigo);
     document.getElementById('codigoUsuario').value = usuario;
     toJSONString('test','res');
 }
