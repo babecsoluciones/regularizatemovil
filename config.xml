@@ -2,7 +2,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.regularizateMovil.regularizate"
-        version   = "0.1.1">
+        version   = "0.1.2">
   <name>Regularizate</name>
   <description>Regularizate</description>
   <author href="http://regularizate.org" email="sistemas@regularizate.org">SDI·BABEC</author>
@@ -67,6 +67,8 @@
   <!-- Plugins can also be added here. -->
   <!--<gap:plugin name="nl.x-services.plugins.socialsharing" />-->
   <!--<gap:plugin name="org.apache.cordova.inappbrowser" />-->
+    
+    <icon src="icons/1024.png" />
   
   <!-- Define app icon for each platform. -->
   <icon src="icons/1024.png" width="1024" height="1024" />
