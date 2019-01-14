@@ -66,14 +66,14 @@
 				<h3>Reg&iacute;strate</h3>
 				<div class="line"></div>
 			</div>
-			<form id="test" name="datos" method="post">
+			<form id="test" name="test" enctype="application/x-www-form-urlencoded">
 				<input type="text" name="nombre" id="nombre" placeholder="Nombre Completo">
 				<input type="email" name="email" id="email" placeholder="Email">
 				<input type="password" name="password" id="password" placeholder="Password">
                 <input type="hidden" id="tipo" name="tipo" readonly value="user-reg">
-				<button class="button" onclick="toJSONString('test')"><i class="fa fa-send"></i>Registrarme</button>
+				<button class="button" type="submit" onclick="toJSONString('test');"><i class="fa fa-send"></i>Registrarme</button>
 			</form>
-			
+			<div id="response" name="response"></div>
 		</div>
 		</div>
 	</div>
@@ -84,22 +84,55 @@
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/main.js"></script>
      <script src="js/aplicacion.js"></script>
+    
+    <script>
+$(document).ready(function(){
+    $('#test').submit(function(){
+     
+        // show that something is loading
+        $('#response').html("<b>Enviando datos...</b>");
+         
+        /*
+         * 'post_receiver.php' - where you will pass the form data
+         * $(this).serialize() - to easily read form data
+         * function(data){... - data contains the response from post_receiver.php
+         */
+        $.ajax({
+            type: 'POST',
+            url: 'https://regularizate.org/api/', 
+            data: $(this).serialize()
+        })
+        .done(function(data){
+             
+        })
+        .fail(function() {
+         
+            // just in case posting your form failed
+            alert( "Fallo en el envio de datos." );
+             
+        });
+ 
+        // to prevent refreshing the whole page page
+        return false;
+ 
+    });
+});
+</script>
+    
     <script type="application/javascript">
 	
-		function enviar(cadena)
-		{
+		function enviar(cadena){
+            var tipo = document.getElementById('tipo').value;
 			$.ajax({
 				type: "POST",
 				url: "https://regularizate.org/api/",
 				data: cadena,
-				contentType: "application/json; charset=utf-8",
-				dataType: "json",
+				contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
 				success: function(data){
-                    if(data.codigo)
-                        {alert("Registro completado");}
-                    else
-                        {alert("Error al procesar la solicitud");}
 					
+                   alert(data.mensaje);
+                    
 				},
 				failure: function(errMsg) {
 					alert('Error al obtener los datos.\nComprueba tu enlace a internet');
@@ -107,7 +140,7 @@
 			});
 		}
 		
-		function toJSONString( form ) {
+		function toJSONString( form ,res) {
   		var form1 = document.getElementById(form);
 		var obj = {};
 		var elements = form1.querySelectorAll( "input, select, textarea" );
@@ -126,7 +159,7 @@
 	}
       
      
-	validarUsuario();
+	//validarUsuario();
 	</script>
 </body>
 </html>

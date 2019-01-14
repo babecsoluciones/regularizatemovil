@@ -85,13 +85,13 @@
 					</ul>
 				</div>
 				<div id="tabs1" class="col s12">
-					<div class="contents-tabs">
-						<ul id="lista"></ul>
+					<div class="contents-tabs" id="lista">
+						
 					</div>
 				</div>
 				<div id="tabs2" class="col s12">
-					<div class="contents-tabs">
-						<ul id="galeria"></ul>
+					<div class="contents-tabs" id="galeria">
+						
 					</div>
 				</div>
 			</div>
@@ -125,7 +125,6 @@
 				dataType: "json",
 				success: function(data){
 					
-                    
                     document.getElementById('lista').innerHTML = data.servicios;
                     
                     document.getElementById('galeria').innerHTML = data.contratados;

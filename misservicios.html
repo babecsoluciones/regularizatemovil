@@ -73,6 +73,8 @@
 					</center>
 					
                     <p id="descripcion"></p>
+                    <br>
+                    <div id="mensajes" class="mensajes"></div>
 				</div>
 			</div>
 		</div>
@@ -107,6 +109,8 @@
 					 document.getElementById('imagen').src = data.imagen;
                     
                     document.getElementById('descripcion').innerHTML = data.descripcion;
+                    
+                    document.getElementById('mensajes').innerHTML = data.mensajes;
                    
 				},
 				failure: function(errMsg) {
