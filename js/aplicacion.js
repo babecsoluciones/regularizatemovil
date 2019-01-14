@@ -104,7 +104,7 @@ function pedirServicio(codigo)
 {
     document.getElementById('codigo').value = localStorage.getItem("codigoServicio",codigo);
     toJSONString('test','res');
-    localStorage.removeItem("codigoPromocion");
+    localStorage.removeItem("codigoServicio");
 }
 
 function datosUsuario()
