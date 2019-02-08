@@ -72,7 +72,7 @@
                 <input type="hidden" id="tipo" name="tipo" readonly value="inic-seg">
 				<button class="button" type="submit" onclick="toJSONString('test','a')"><i class="fa fa-send"></i>Iniciar Sesi&oacute;n</button>
 			</form>
-			
+			<div id="response" name="response"></div>
 		</div>
 		</div>
 	</div>
@@ -101,7 +101,10 @@ $(document).ready(function(){
             data: $(this).serialize()
         })
         .done(function(data){
-             
+              if(data.codigo>0)
+                    {localStorage.setItem("codigoUsuario",data.codigo); validarUsuario(); window.location="miperfil.html";}
+                    else
+                    {alert("Error de inicio de sesion");}
         })
         .fail(function() {
          
