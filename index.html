@@ -1,213 +1,313 @@
 <!DOCTYPE html>
-<html lang="zxx">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/log.png" type="image/ico" />
 
-	<link rel="icon" href="images/favicon.png">
-	<title>Regularízate Móvil</title>
+    <title>Todo para tu PyME | App Oficial</title>
 
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet" href="css/materialize.css">
-	<link rel="stylesheet" href="css/loaders.css">
-	<link rel="stylesheet" href="css/lightbox.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/style.css">
-
-</head>
-<body>
-
-	<!-- preloader -->
-	<div class="preloader">
-		<div class="spinner"></div>
-	</div>
-	<!-- end preloader -->
+    <!-- Bootstrap -->
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 	
+    <!-- bootstrap-progressbar -->
+    <link href="vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
-	<!-- slide -->
-	<div class="slide slide-home">
-		<div class="slide-show owl-carousel owl-theme">
-			<div class="slide-content">
-				<div class="mask"></div>
-				<img src="images/sld-bg.png" alt="">
-				<div class="caption text-center">
-					<h2>Bienvenido a Regularizate Movil</h2>
-                    <br>
-                    <center>
-                        <img src="images/icn-app.png" style="width:80px; height:80px;" class="img-responsive">
-                    </center>
-                    
-				</div>
-			</div>
-			<div class="slide-content">
-				<div class="mask"></div>
-				<img src="images/sld-bg.png" alt="">
-				<div class="caption center">
-					<h2>¿Que negocio buscas?</h2>
-					
-					<button class="button" onclick="window.location='negocios.html'">Ir a negocios</button>
-				</div>
-			</div>
-			<div class="slide-content">
-				<div class="mask"></div>
-				<img src="images/sld-bg.png" alt="">
-				<div class="caption text-center">
-					<h2>¿Buscas empleo?</h2>
-					<button class="button">Ver Vacantes</button>
-				</div>
-			</div>
-			<div class="slide-content">
-				<div class="mask"></div>
-				<img src="images/sld-bg.png" alt="">
-				<div class="caption center">
-					<h2>¿Buscas Promociones</h2>
-					<button class="button">Ver Promociones</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end slide -->
+    <!-- Custom Theme Style -->
+    <link href="build/css/custom.min.css" rel="stylesheet">
+  </head>
 
-	<!-- menu -->
-	<div class="menu segments">
-		<div class="container">
-			<div class="row">
-				<div class="col s4">
-					<a href="negocios.html">
-						<div class="icon">
-							<i class="fa fa-shopping-cart indigo"></i>
-						</div>
-						Negocios
-					</a>
-				</div>
-                <div class="col s4">
-					<a href="promociones.html">
-						<div class="icon">
-							<i class="fa fa-dollar turqoise"></i>
-						</div>
-						Promociones 
-					</a>
-				</div>
-				<div class="col s4">
-					<a href="empleo.html">
-						<div class="icon">
-							<i class="fa fa-users belize"></i>
-						</div>
-						Bolsa de Trabajo
-					</a>
-				</div>
-			</div>
-            
-			<div class="row">
-				<div class="col s4">
-					<a href="capacitacion.html">
-						<div class="icon">
-							<i class="fa fa-spinner wizteria"></i>
-						</div>
-						Capacitaci&oacute;n
-					</a>
-				</div>
-				<div class="col s4">
-					<a href="sign-in.html" id="btnUsuario">
-						<div class="icon">
-							<i class="fa fa-sign-in pomeg"></i>
-						</div>
-						Iniciar Sesi&oacute;n
-					</a>
-				</div>
-				<div class="col s4" id="signup">
-					<a href="sign-up.html">
-						<div class="icon">
-							<i class="fa fa-user-plus cyan"></i>
-						</div>
-						Registrarme
-					</a>
-				</div>
-			</div>
-            
-		</div>
-	</div>
-	<!-- end menu -->
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0; display:none;">
+              <a href="index.html" class="site_title"><center><img src="images/log.png" class="img-responsive"></center></a>
+            </div>
 
-	<!-- persipura -->
-	<div class="persipura">
-		<div class="container">
-			<div class="jayapura">
-				<div class="col s6">
-					<div class="content">
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-    
-     <div style="display:none;">
-    <form id="test" name="test" method="post">
-<input type="hidden" id="tipo" name="tipo" readonly value="req-url"><br>
-        </form>
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix"  style="display:none;">
+              <div class="profile_pic">
+                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2>John Doe</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                
+                <ul class="nav side-menu">
+                    <li><a href="index.html"><i class="fa fa-home"></i> Inicio </a></li>
+                    <li><a href="http://todoparatupyme.com"><i class="fa fa-chain"></i> Sitio web </a></li>
+                  
+                </ul>
+              </div>
+              
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small" style="display:none;">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right"  style="display:none;">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="images/img.jpg" alt="">John Doe
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:;"> Profile</a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                    <li><a href="javascript:;">Help</a></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  </ul>
+                </li>
+
+                <li role="presentation" class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="badge bg-green">6</span>
+                  </a>
+                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="text-center">
+                        <a>
+                          <strong>See All Alerts</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main" id="divXHR">
+          
+          
+        </div>
+        <!-- /page content -->
+          <form id="Datos" name="Datos">
+          <input type="hidden" id="tAccion" name="tAccion" value="inicio">
+          <input type="hidden" name="tCodigo" id="tCodigo">
+          </form>
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            &copy; Todos los Derechos Reservados | Desarrollado por <a href="https://sdibabec.com">SDI·BABEC</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
     </div>
-	<!-- end persipura -->
 
-	<!-- vs -->
-	<!-- end vs -->
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- gauge.js -->
+    <script src="vendors/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="vendors/iCheck/icheck.min.js"></script>
+    <!-- Skycons -->
+    <script src="vendors/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script src="vendors/Flot/jquery.flot.js"></script>
+    <script src="vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="vendors/Flot/jquery.flot.time.js"></script>
+    <script src="vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="vendors/DateJS/build/date.js"></script>
+    <!-- JQVMap -->
+    <script src="vendors/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="vendors/moment/min/moment.min.js"></script>
+    <script src="vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-
-	<script src="js/jquery.min.js"></script>
-	<script src="js/materialize.js"></script>
-	<script src="js/numscroller.js"></script>
-	<script src="js/lightbox.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/main.js"></script>
-    <script src="js/aplicacion.js"></script>
-
-    
-    <script type="application/javascript">
+    <!-- Custom Theme Scripts -->
+    <script src="build/js/custom.min.js"></script>
+      
+    <script type="text/javascript" src="js/jquery.serializejson.js"></script>
+      
+      <script>
+          function asignarSeccion(accion)
+          {
+              document.getElementById('tAccion').value=accion;
+              consultar();
+          }
+          
+          function asignarParametro(accion,codigo)
+          {
+              document.getElementById('tAccion').value=accion;
+              document.getElementById('tCodigo').value=codigo;
+              consultar();
+          }
+      function consultar()
+      {
+          var obj = $('#Datos').serializeJSON();
+          var jsonString = JSON.stringify(obj);
+          
+          $.ajax({
+              type: "POST",
+              url: "http://todoparatupyme.com/api/app-01-01.php",
+              data: jsonString,
+              contentType: "application/json; charset=utf-8",
+              dataType: "json",
+              success: function(data){
+                  document.getElementById('divXHR').innerHTML = data.tRespuesta;
+              },
+              failure: function(errMsg) {
+                  alert('Error al enviar los datos.');
+              }
+          });
+          
+      }
+          
+      function enviar()
+      {
+          var obj = $('#Consulta').serializeJSON();
+          var jsonString = JSON.stringify(obj);
+          
+          $.ajax({
+              type: "POST",
+              url: "http://todoparatupyme.com/api/app-01-01.php",
+              data: jsonString,
+              contentType: "application/json; charset=utf-8",
+              dataType: "json",
+              success: function(data){
+                  alert(data.tMensaje);
+                  asignarSeccion('inicio');
+              },
+              failure: function(errMsg) {
+                  alert('Error al enviar los datos.');
+              }
+          });
+          
+      }
+          
+          consultar();
+      </script>
 	
-		function enviar(cadena){
-            var tipo = document.getElementById('tipo').value;
-			$.ajax({
-				type: "POST",
-				url: "https://regularizate.org/api/",
-				data: cadena,
-				contentType: "application/json; charset=utf-8",
-				dataType: "json",
-				success: function(data){
-					localStorage.removeItem("urlServicio");
-                    localStorage.setItem("urlServicio",data.enlace);
-				},
-				failure: function(errMsg) {
-					alert('Error al obtener los datos.\nComprueba tu enlace a internet');
-				}
-			});
-		}
-		
-		function toJSONString( form ,res) {
-  		var form1 = document.getElementById(form);
-		var obj = {};
-		var elements = form1.querySelectorAll( "input, select, textarea" );
-		for( var i = 0; i < elements.length; ++i ) {
-			var element = elements[i];
-			var name = element.name;
-			var value = element.value;
-
-			if( name ) {
-				obj[ name ] = value;
-			}
-		}
-			
-			enviar(JSON.stringify( obj ));
-            
-	}
-        
-
-        
-        toJSONString('test','res');
-        validarUsuario();
-	
-	</script>
-
-</body>
+  </body>
 </html>
